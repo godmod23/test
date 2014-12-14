@@ -3,3 +3,5 @@ This is a testfile
 Changes here.
 
 And here is another change.
+
+This is for the next release.
