@@ -6,11 +6,22 @@ php:
   
 before_script:
   - pyrus install pear/PHP_CodeSniffer
+  ## PHP Copy/Paste Detector
+  - curl -o phpcpd.phar https://phar.phpunit.de/phpcpd.phar
+  ## PHP Mess Detector
+  - pear config-set preferred_state beta
+  - pear channel-discover pear.phpmd.org
+  - pear channel-discover pear.pdepend.org
+  - pear install --alldeps phpmd/PHP_PMD
   - phpenv rehash
 
 script: 
-  - phpcs --standard=PHPCS --extensions=php --ignore=vendor
+  - phpcs --standard=PHPCS --extensions=php --ignore=vendor ./
   - phpunit --configuration tests/phpunit.xml
+  ## PHP Copy/Paste Detector
+  - php phpcpd.phar ./ --verbose
+  ## PHP Mess Detector
+  - phpmd ./
   
 matrix:
   allow_failures:
