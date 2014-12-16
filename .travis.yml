@@ -2,19 +2,18 @@ language: php
 php:
   - "5.5"
   - "5.4"
-  - "5.3"
   
 before_script:
-  - pyrus install pear/PHP_CodeSniffer
+  #- pyrus install pear/PHP_CodeSniffer
   ## PHP Copy/Paste Detector
-  - curl -o phpcpd.phar https://phar.phpunit.de/phpcpd.phar
+  #- curl -o phpcpd.phar https://phar.phpunit.de/phpcpd.phar
   ## PHP Mess Detector
-  - pear config-set preferred_state beta
-  - printf "\n" | pecl install imagick
-  - pear channel-discover pear.phpmd.org
-  - pear channel-discover pear.pdepend.org
-  - pear install --alldeps phpmd/PHP_PMD
-  - phpenv rehash
+  #- pear config-set preferred_state beta
+  #- printf "\n" | pecl install imagick
+  #- pear channel-discover pear.phpmd.org
+  #- pear channel-discover pear.pdepend.org
+  #- pear install --alldeps phpmd/PHP_PMD
+  #- phpenv rehash
 
 script: 
   #- phpcs --standard=PHPCS --extensions=php --ignore=vendor ./
