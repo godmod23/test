@@ -9,7 +9,7 @@ before_script:
   - phpenv rehash
 
 script: 
-  - phpcs --standard=PEAR --extensions=php --ignore=vendor
+  - phpcs --standard=PHPCS --extensions=php --ignore=vendor
   - phpunit --configuration tests/phpunit.xml
   
 matrix:
