@@ -17,12 +17,13 @@ before_script:
   - phpenv rehash
 
 script: 
-  - phpcs --standard=PHPCS --extensions=php --ignore=vendor ./
-  - phpunit --configuration tests/phpunit.xml
+  #- phpcs --standard=PHPCS --extensions=php --ignore=vendor ./
+  #- phpunit --configuration tests/phpunit.xml
   ## PHP Copy/Paste Detector
-  - php phpcpd.phar ./ --verbose
+  #- php phpcpd.phar ./ --verbose
   ## PHP Mess Detector
-  - phpmd ./
+  #- phpmd ./
+  - find ./ -type f -name \*.php -exec php -l {} \; | grep “Errors parsing “;
   
 matrix:
   allow_failures:
