@@ -23,7 +23,8 @@ script:
   #- php phpcpd.phar ./ --verbose
   ## PHP Mess Detector
   #- phpmd ./
-  - find ./ -type f -name \*.php -exec php -l {} \; | grep "Errors parsing ";
+  #- find ./ -type f -name \*.php -exec php -l {} \; | grep "Errors parsing ";
+  - ./tests/phplint.sh
   
 matrix:
   allow_failures:
