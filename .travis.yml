@@ -24,6 +24,7 @@ script:
   ## PHP Mess Detector
   #- phpmd ./
   #- find ./ -type f -name \*.php -exec php -l {} \; | grep "Errors parsing ";
+  - chmod -R 777 ./tests/phplint.sh
   - ./tests/phplint.sh
   
 matrix:
