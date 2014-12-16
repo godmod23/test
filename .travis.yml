@@ -7,10 +7,9 @@ php:
 before_script:
   - pyrus install pear/PHP_CodeSniffer
   - phpenv rehash
-  - phpcs --config-set default_standard PEAR
 
 script: 
-  - phpcs --standard=build/travis-ci-phpcs.xml --extensions=php --ignore=vendor
+  - phpcs --standard=PEAR --extensions=php --ignore=vendor
   - phpunit --configuration tests/phpunit.xml
   
 matrix:
